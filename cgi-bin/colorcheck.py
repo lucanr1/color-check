@@ -1,20 +1,24 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 import cgi
 
 form = cgi.FieldStorage()
 
 color = form.getvalue("color")
 
+cdoc = open("colors.txt", "r")
+
 found = False
-for color in colors.txt:
-    if blabla in line:
+for color in cdoc:
+    if color in cdoc:
         found = True
         break
 
+cdoc.close()
+
 if found:
-    output = color+" is a color"
+    output = str(color) + " is a color"
 else:
-    output = color+" is not a color"
+    output = str(color) + " is not a color"
 
 page = """
     <!DOCTYPE html>
@@ -26,10 +30,10 @@ page = """
       </head>
       <body>
 
-        <h1>"""output"""</h1>
+        <h1>{}</h1>
 
       </body>
     </html>
-"""
+""".format(output)
 
 print(page)
