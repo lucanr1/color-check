@@ -1,24 +1,25 @@
-#!/usr/bin/env python
+#!/usr/local/bin/python3
 import cgi
+import os
 
 form = cgi.FieldStorage()
 
+path = "/Users/luca/Projects/Foundations/color-check/cgi-bin/colors.txt"
 color = form.getvalue("color")
 
-cdoc = open("colors.txt", "r")
+cdoc = open(path, "r")
+content = cdoc.read()
 
 found = False
-for color in cdoc:
-    if color in cdoc:
-        found = True
-        break
+if(color in content):
+    found = True
 
 cdoc.close()
 
 if found:
-    output = str(color) + " is a color"
+    output = color + " is a color"
 else:
-    output = str(color) + " is not a color"
+    output = color + " is not a color"
 
 page = """
     <!DOCTYPE html>
@@ -26,7 +27,7 @@ page = """
       <head>
         <meta charset="utf-8" />
         <title>Color-Check</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/style.css">
       </head>
       <body>
 
