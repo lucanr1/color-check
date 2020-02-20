@@ -11,7 +11,7 @@ cdoc = open(path, "r")
 content = cdoc.read()
 
 found = False
-if(color in content):
+if(color.lower() in content):
     found = True
 
 cdoc.close()
@@ -29,12 +29,14 @@ page = """
         <title>Color-Check</title>
         <link rel="stylesheet" href="/style.css">
       </head>
-      <body>
+      <body style="background-color: {}">
 
         <h1>{}</h1>
 
+        <a href="/index.html">Try Again</a>
+
       </body>
     </html>
-""".format(output)
+""".format(color, output)
 
 print(page)
