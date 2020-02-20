@@ -30,10 +30,10 @@ page = """
         <link rel="stylesheet" href="/style.css">
       </head>
       <body style="background-color: {}">
-
-        <h1>{}</h1>
-
-        <a href="/index.html">Try Again</a>
+        <div class="main">
+          <h1>{}</h1>
+          <a href="/index.html">Try Again</a>
+        </div>
 
       </body>
     </html>

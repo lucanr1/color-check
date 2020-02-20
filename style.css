@@ -1,6 +1,21 @@
 form {
   font-size: 20px;
 }
+html {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+}
 body {
+  min-height: 100%;
+  width: 100%;
   text-align: center;
+}
+.main {
+  margin: auto;
+  border: 3px solid green;
+  background-color: white;
+  width: 30%;
+  border-radius: 2em;
+  padding: 10px;
 }
